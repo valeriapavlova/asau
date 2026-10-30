@@ -50,20 +50,22 @@
           el("div", {}, [el("div", { class: "soon-label", text: t.soon }), el("div", { class: "mono", style: "margin-top:8px", text: z.by })]),
         ]);
       } else {
-        cover = el("button", { class: "zine-cover", "aria-label": `${t.see_inside}: ${z.title}` }, [
-          el("img", { src: z.cover, alt: z.title, loading: "lazy" }),
+        const imgStyle = z.coverFit ? `object-fit:${z.coverFit};background:${z.coverBg || "transparent"};box-shadow:none` : "";
+        cover = el("button", { class: "zine-cover" + (z.book ? " is-book" : ""), "aria-label": `${t.see_inside}: ${z.title}` }, [
+          el("img", { src: z.cover, alt: z.title, loading: "lazy", style: imgStyle }),
         ]);
         cover.addEventListener("click", () => openViewer(z));
       }
+      const specs = z.specs[lang] ? (z.hideLangLabel ? z.specs[lang] : `${z.specs[lang]} · ${t.lang_label}`) : "";
       const meta = el("div", { class: "zine-meta" }, [
         el("div", { class: "zine-series mono", text: z.series[lang] }),
         el("h3", { text: z.title }),
         z.desc[lang] ? el("p", { class: "zine-desc", text: z.desc[lang] }) : null,
-        z.specs[lang] ? el("div", { class: "zine-specs mono", text: `${z.specs[lang]} · ${t.lang_label}` }) : null,
+        specs ? el("div", { class: "zine-specs mono", text: specs }) : null,
         el("div", { class: "zine-by mono", text: `${t.by} ${z.by}` }),
       ]);
       const card = el("article", { class: "zine" + (z.soon ? " soon" : ""), style }, [cover, meta]);
-      if (!z.soon) {
+      if (!z.soon && z.spreads.length) {
         const btn = el("button", { class: "zine-open mono", text: t.see_inside + " →" });
         btn.addEventListener("click", () => openViewer(z));
         card.append(btn);
@@ -75,7 +77,10 @@
   function renderCollabs(lang) {
     document.getElementById("collabs").replaceChildren(...COLLABS.map((c) =>
       el("div", { class: "collab" }, [
-        el("h3", { text: c.name }),
+        el("div", { class: "collab-head" }, [
+          c.logo ? el("img", { src: c.logo, alt: c.name + " logo", class: "collab-logo" }) : null,
+          el("h3", { text: c.name }),
+        ]),
         el("p", { text: UI[lang][c.textKey] }),
         el("div", { class: "links mono" }, c.links.map(([label, href]) => el("a", { href, target: "_blank", rel: "noopener", text: label + " ↗" }))),
         c.zines && c.zines.length ? el("div", { class: "zines zines-collab" }, c.zines.map((z) => card(z, lang))) : null,

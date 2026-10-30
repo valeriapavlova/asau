@@ -132,27 +132,53 @@ const ZINES = [
     cover: "img/narbut-cover.jpg",
     spreads: ["img/narbut-2-3.jpg", "img/narbut-4-5.jpg", "img/narbut-6-7.jpg", "img/narbut-8-9.jpg", "img/narbut-10-11.jpg", "img/narbut-back.jpg"],
   },
+  {
+    /* TODO: перевір опис, додай кількість сторінок / формат / ціну */
+    id: "libro",
+    by: "ASAU",
+    book: true,
+    title: "Antiautoritari@s en Ucrania",
+    series: { va: "Llibre · 2022–2026", es: "Libro · 2022–2026", uk: "Книжка · 2022–2026", en: "Book · 2022–2026" },
+    desc: {
+      va: "Recopilació d'articles i entrevistes amb persones antiautoritàries a Ucraïna, escrits entre 2022 i 2026.",
+      es: "Recopilación de artículos y entrevistas con personas antiautoritarias en Ucrania, escritos entre 2022 y 2026.",
+      uk: "Збірка статей та інтерв'ю з антиавторитарними людьми в Україні, написаних між 2022 і 2026 роками.",
+      en: "A collection of articles and interviews with anti-authoritarian people in Ukraine, written between 2022 and 2026.",
+    },
+    specs: { va: "Llibre en castellà", es: "Libro en castellano", uk: "Книжка іспанською", en: "Book in Spanish" },
+    hideLangLabel: true,
+    color: "#1A1A1A", ink2: "#9DC3E6",
+    cover: "img/libro-antiautoritarios.jpg",
+    coverFit: "contain", coverBg: "#000",
+    spreads: [],
+  },
 ];
 
 /* Col·laboracions: кожен колектив має СВОЮ секцію і свої зіни (zines: [...]) */
 const COLLABS = [
   {
     name: "Ruinas del Kremlin",
+    logo: "img/rk-logo.png",
     textKey: "rk_text",
     links: [["Instagram", "https://www.instagram.com/ruinasdelkremlin/"], ["lnk.bio", "https://lnk.bio/ruinasdelkremlin"]],
     zines: [
       {
-        /* TODO: зін Ruinas del Kremlin — заміни title/desc/specs/cover/spreads і ВИДАЛИ рядок soon: true */
-        id: "rk1",
+        id: "islas",
         by: "Ruinas del Kremlin",
-        soon: true,
-        title: "Ruinas del Kremlin",
-        series: { va: "Fanzine", es: "Fanzine", uk: "Зін", en: "Zine" },
-        desc: { va: "", es: "", uk: "", en: "" },
-        specs: { va: "", es: "", uk: "", en: "" },
-        color: "#E8452C", ink2: "#E8452C",
-        cover: "",
-        spreads: [],
+        title: "Islas",
+        series: { va: "Fotoassaig", es: "Fotoensayo", uk: "Фотоесей", en: "Photo essay" },
+        desc: {
+          va: "Solovki, el primer camp del sistema punitiu soviètic (1920), que més tard s'anomenaria Gulag. Fotografies, documents i textos sobre els qui van tornar de les illes com a fantasmes, i sobre els qui no van tornar mai.",
+          es: "Solovki, el primer campo del sistema punitivo soviético (1920), que más tarde se llamaría Gulag. Fotografías, documentos y textos sobre quienes volvieron de las islas como fantasmas, y sobre quienes nunca volvieron.",
+          uk: "Соловки — перший табір радянської каральної системи (1920), що згодом отримає назву ГУЛАГ. Фотографії, документи й тексти про тих, хто повернувся з островів привидами, і про тих, хто не повернувся ніколи.",
+          en: "Solovki, the first camp of the Soviet punitive system (1920), later known as the Gulag. Photographs, documents and texts about those who returned from the islands as ghosts, and those who never returned.",
+        },
+        specs: { va: "A5 · 24 pàg. · color", es: "A5 · 24 págs. · color", uk: "A5 · 24 с. · кольоровий", en: "A5 · 24 pp. · colour" },
+        color: "#16213D", ink2: "#B9C3D6",
+        cover: "img/islas-cover.jpg",
+        spreads: ["img/islas-2-3.jpg", "img/islas-4-5.jpg", "img/islas-6-7.jpg", "img/islas-8-9.jpg", "img/islas-10-11.jpg",
+                  "img/islas-12-13.jpg", "img/islas-14-15.jpg", "img/islas-16-17.jpg", "img/islas-18-19.jpg", "img/islas-20-21.jpg",
+                  "img/islas-22-23.jpg", "img/islas-back.jpg"],
       },
     ],
   },
