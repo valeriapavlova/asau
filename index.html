@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ca-valencia">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASAU · Assemblea Solidaritat Antifeixista amb Ucraïna</title>
+  <meta name="description" content="Fanzines sobre llengua, memòria i cultura ucraïnesa. Autoedició antifeixista des de València.">
+  <meta property="og:title" content="ASAU · Fanzines contra l'oblit">
+  <meta property="og:description" content="Autoedició antifeixista des de València: fanzines sobre llengua, memòria i cultura ucraïnesa.">
+  <meta property="og:image" content="img/g-cover.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F3EFE6'/%3E%3Cpath d='M7 8h13V3h5v10H12v16H7z' fill='%231F3FA8'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="#">
+      <span class="logo-mark">ASAU</span>
+      <span class="logo-full mono">Assemblea Solidaritat Antifeixista amb Ucraïna</span>
+    </a>
+    <nav class="nav mono" aria-label="Seccions">
+      <a href="#pubs" data-i18n="nav_pubs"></a>
+      <a href="#about" data-i18n="nav_about"></a>
+      <a href="#collab" data-i18n="nav_collab"></a>
+      <a href="#contact" data-i18n="nav_contact"></a>
+    </nav>
+    <div class="langs mono" role="group" aria-label="Llengua">
+      <button data-lang="va">VAL</button>
+      <button data-lang="es">ES</button>
+      <button data-lang="uk">УКР</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="kicker mono" data-i18n="hero_kicker"></p>
+        <h1 data-i18n="hero_title"></h1>
+        <p class="lead" data-i18n="hero_text"></p>
+      </div>
+      <div class="hero-collage" aria-hidden="true">
+        <img src="img/narbut-cover.jpg" alt="" class="c c3">
+        <img src="img/i-cover.jpg" alt="" class="c c2">
+        <img src="img/g-cover.jpg" alt="" class="c c1">
+        <span class="tape t1"></span><span class="tape t2"></span>
+      </div>
+    </section>
+
+    <section id="pubs" class="block">
+      <div class="block-head">
+        <h2 data-i18n="pubs_title"></h2>
+        <p class="mono note" data-i18n="pubs_note"></p>
+      </div>
+      <div id="zines" class="zines"></div>
+    </section>
+
+    <section id="about" class="block two">
+      <h2 data-i18n="about_title"></h2>
+      <p class="lead" data-i18n="about_text"></p>
+    </section>
+
+    <section id="collab" class="block two">
+      <h2 data-i18n="collab_title"></h2>
+      <div id="collabs"></div>
+    </section>
+
+    <section id="contact" class="block two">
+      <h2 data-i18n="contact_title"></h2>
+      <div>
+        <p class="lead" data-i18n="contact_text"></p>
+        <p id="contact-links" class="contact-links"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot mono">
+    <span>ASAU · València</span>
+    <span data-i18n="footer"></span>
+  </footer>
+
+  <dialog id="viewer" class="viewer">
+    <button class="close mono" aria-label="Tancar">✕</button>
+    <div class="viewer-track"></div>
+  </dialog>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
