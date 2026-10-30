@@ -20,11 +20,13 @@ fonts/       — шрифти Inter і PT Mono (локально)
 
 Свій домен (наприклад `asau.cat`) можна підключити пізніше: Settings → Pages → Custom domain.
 
-## Як додати зін (наприклад, від Ruinas del Kremlin)
-1. Поклади картинки в `img/` (обкладинка ~900 px завширшки, розвороти ~1600 px).
-2. У `content.js` знайди об'єкт з `id: "rk"`:
-   - заміни `title`, `desc` (4 мови), `specs`, `cover`, `spreads`;
-   - **видали рядок `soon: true`**.
+## Як додати зін
+Картинки клади в `img/` (обкладинка ~900 px завширшки, розвороти ~1600 px).
+
+- **Зін ASAU** → додай об'єкт у масив `ZINES` у `content.js` (скопіюй будь-який наявний).
+- **Зін Ruinas del Kremlin** → вони мають окрему темну секцію «Col·laboracions». У `content.js` знайди
+  `COLLABS → zines` і об'єкт `id: "rk1"`: заміни `title`, `desc` (4 мови), `specs`, `cover`, `spreads`
+  і **видали рядок `soon: true`**. Ще один зін просто додай другим об'єктом у той самий масив `zines`.
 
 ## Що треба перевірити / заповнити (позначено `TODO` у content.js)
 - `CONTACT.instagram`: я поставила `@antifaucrania.vlc`, бо цей акаунт підписаний на Ruinas del Kremlin. Перевір, чи це справді ASAU.

@@ -37,9 +37,12 @@
   }
 
   function renderZines(lang) {
+    document.getElementById("zines").replaceChildren(...ZINES.map((z) => card(z, lang)));
+  }
+
+  function card(z, lang) {
     const t = UI[lang];
-    const box = document.getElementById("zines");
-    box.replaceChildren(...ZINES.map((z) => {
+    {
       const style = `--accent:${z.color};--ink2:${z.ink2};--accent2:${z.ink2}`;
       let cover;
       if (z.soon) {
@@ -66,7 +69,7 @@
         card.append(btn);
       }
       return card;
-    }));
+    }
   }
 
   function renderCollabs(lang) {
@@ -75,6 +78,7 @@
         el("h3", { text: c.name }),
         el("p", { text: UI[lang][c.textKey] }),
         el("div", { class: "links mono" }, c.links.map(([label, href]) => el("a", { href, target: "_blank", rel: "noopener", text: label + " ↗" }))),
+        c.zines && c.zines.length ? el("div", { class: "zines zines-collab" }, c.zines.map((z) => card(z, lang))) : null,
       ])));
   }
 

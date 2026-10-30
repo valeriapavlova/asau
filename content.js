@@ -132,23 +132,28 @@ const ZINES = [
     cover: "img/narbut-cover.jpg",
     spreads: ["img/narbut-2-3.jpg", "img/narbut-4-5.jpg", "img/narbut-6-7.jpg", "img/narbut-8-9.jpg", "img/narbut-10-11.jpg", "img/narbut-back.jpg"],
   },
-  {
-    /* TODO: зін Ruinas del Kremlin — заміни title/desc/cover, прибери soon:true */
-    id: "rk",
-    by: "Ruinas del Kremlin",
-    collab: true,
-    soon: true,
-    title: "Ruinas del Kremlin × ASAU",
-    series: { va: "Col·laboració", es: "Colaboración", uk: "Колаборація", en: "Collaboration" },
-    desc: { va: "", es: "", uk: "", en: "" },
-    specs: { va: "", es: "", uk: "", en: "" },
-    color: "#1A1A1A", ink2: "#E8452C",
-    cover: "",
-    spreads: [],
-  },
 ];
 
+/* Col·laboracions: кожен колектив має СВОЮ секцію і свої зіни (zines: [...]) */
 const COLLABS = [
-  { name: "Ruinas del Kremlin", textKey: "rk_text",
-    links: [["Instagram", "https://www.instagram.com/ruinasdelkremlin/"], ["lnk.bio", "https://lnk.bio/ruinasdelkremlin"]] },
+  {
+    name: "Ruinas del Kremlin",
+    textKey: "rk_text",
+    links: [["Instagram", "https://www.instagram.com/ruinasdelkremlin/"], ["lnk.bio", "https://lnk.bio/ruinasdelkremlin"]],
+    zines: [
+      {
+        /* TODO: зін Ruinas del Kremlin — заміни title/desc/specs/cover/spreads і ВИДАЛИ рядок soon: true */
+        id: "rk1",
+        by: "Ruinas del Kremlin",
+        soon: true,
+        title: "Ruinas del Kremlin",
+        series: { va: "Fanzine", es: "Fanzine", uk: "Зін", en: "Zine" },
+        desc: { va: "", es: "", uk: "", en: "" },
+        specs: { va: "", es: "", uk: "", en: "" },
+        color: "#E8452C", ink2: "#E8452C",
+        cover: "",
+        spreads: [],
+      },
+    ],
+  },
 ];
